@@ -18,9 +18,10 @@ import java.util.List;
 public class Medico extends Usuario{
     @Column (name = "numColegiado")
     private String numColegiado;
-    @ManyToMany (mappedBy = "medicos")
+    @ManyToMany (mappedBy = "medicos",  cascade = CascadeType.REMOVE)
     private List<Paciente> pacientes;
 
-    @OneToMany (mappedBy = "medico")
+    @OneToMany (mappedBy = "medico", cascade = CascadeType.REMOVE)
     private List<Cita> citas;
+
 }

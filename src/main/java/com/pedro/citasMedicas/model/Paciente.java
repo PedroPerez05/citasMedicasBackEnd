@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Table (name = "Paciente")
@@ -25,9 +26,10 @@ public class Paciente extends Usuario{
     private String telefono;
     @Column (name = "direccion")
     private String direccion;
-    @ManyToMany //N -> M
-    private List<Medico> medicos;
 
-    @OneToMany (mappedBy = "paciente") //en el mapeo debe ponerse el nombre del atributo de paciente que hay en la clase "Cita"
+    @ManyToMany//N -> M
+    private List<Medico> medicos= new ArrayList<Medico>();
+
+    @OneToMany (mappedBy = "paciente", cascade = CascadeType.REMOVE) //en el mapeo debe ponerse el nombre del atributo de paciente que hay en la clase "Cita"
     private List<Cita> citas;
 }

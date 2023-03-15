@@ -1,6 +1,5 @@
 package com.pedro.citasMedicas.dto;
 
-import com.pedro.citasMedicas.model.Cita;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +13,13 @@ public class CitaDTO {
     private Long id;
     private Date fechaHora;
     private String motivoCita;
+
+    private DiagnosticoDTOSimp diagnostico;
+
+    private MedicoDTOSimpC medico;
+    private PacienteDTOSimpC paciente;
+
+    //private Diagnostico diagnosticoSimp;
 
     /*public static CitaDTO convertirCitaADTO(Cita cita) {  //Prueba
         CitaDTO citaDTO = new CitaDTO();

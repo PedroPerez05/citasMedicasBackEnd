@@ -30,4 +30,6 @@ public class Usuario {
     private String usuario;
     @Column (name = "clave")
     private String clave;
+    @Column (name = "roles")
+    private String roles;
 }

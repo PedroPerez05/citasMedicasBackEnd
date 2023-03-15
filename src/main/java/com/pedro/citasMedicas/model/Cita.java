@@ -23,7 +23,7 @@ public class Cita {
     private String motivoCita;
 
     @OneToOne (cascade = CascadeType.REMOVE)
-    @JoinColumn(name = "diagnostico_id")
+    @JoinColumn(name="diagnostico_id")
     private Diagnostico diagnostico;
 
     @ManyToOne
